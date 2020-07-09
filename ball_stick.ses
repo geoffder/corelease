@@ -1,0 +1,27 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[4]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+{
+save_window_ = new Graph(0)
+save_window_.size(0,100,-65,20)
+scene_vector_[2] = save_window_
+{save_window_.view(0, -65, 100, 85, 501, 338, 541.44, 305.92)}
+graphList[0].append(save_window_)
+save_window_.save_name("graphList[0].")
+save_window_.addexpr("soma.v(.5)", 1, 1, 0.8, 0.9, 2)
+save_window_.addexpr("dend.v(.5)", 2, 1, 0.8, 0.9, 2)
+}
+{
+save_window_ = new PlotShape(0)
+save_window_.size(3.05201,202.198,-91.5905,91.5903)
+save_window_.variable("v")
+scene_vector_[3] = save_window_
+{save_window_.view(3.05201, -91.5905, 199.146, 183.181, 111, 349, 303.36, 279.04)}
+fast_flush_list.append(save_window_)
+save_window_.save_name("fast_flush_list.")
+}
+objectvar scene_vector_[1]
+{doNotify()}
